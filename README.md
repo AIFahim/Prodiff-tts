@@ -62,3 +62,8 @@
 ## Training Stages:
 - **Step 1** : 
     - Move fastdiff vocoder weight ( [Link of the prodiff trained 22k vocoder from Rongjiehuang huggingface space](https://huggingface.co/spaces/Rongjiehuang/ProDiff/tree/main/checkpoints) ) to the folder `checkpoints`
+- **Step 2** :
+    - Train the prodiff teacher in the cmd: 
+        ```sh
+        CUDA_VISIBLE_DEVICES=0 python tasks/run.py --config modules/ProDiff/config/prodiff_teacher.yaml --exp_name ProDiff_Teacher --reset
+        ```
