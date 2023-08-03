@@ -67,3 +67,4 @@
         ```sh
         CUDA_VISIBLE_DEVICES=0 python tasks/run.py --config modules/ProDiff/config/prodiff_teacher.yaml --exp_name ProDiff_Teacher --reset
         ```
+    **Train weight will be save in the checkpoints folder**
