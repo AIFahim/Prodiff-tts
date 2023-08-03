@@ -55,7 +55,7 @@
                 for char in sorted(unique_chars):
                     f.write(f'{char} {char}\n')
 
-        csv_file = '/home/asif/tts_all/prodiff_traning_PoCs/DiffSinger/DiffSinger_PoCs_1/data/processed/ljspeech/metadata_phone.csv'
+        csv_file = 'data/processed/ljspeech/metadata_phone.csv'
         output_file = 'dict.txt'
         get_unique_chars(csv_file, output_file)
         ```
