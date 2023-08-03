@@ -61,7 +61,7 @@
         ```
 ## Training Stages:
 - **Step 1** : 
-    - Move fastdiff vocoder weight ( [Link of the prodiff trained 22k vocoder from Rongjiehuang huggingface space](https://huggingface.co/spaces/Rongjiehuang/ProDiff/tree/main/checkpoints) ) to the folder `checkpoints`
+    - Move fastdiff vocoder weight ( [Link of the fastdiff trained 22k vocoder from Rongjiehuang huggingface space](https://huggingface.co/spaces/Rongjiehuang/ProDiff/tree/main/checkpoints) ) to the folder `checkpoints`
 - **Step 2** :
     - Train the prodiff teacher in the cmd: 
         ```sh
