@@ -17,6 +17,7 @@
         **This will populate the training files inside of the `data/processed/ljspeech` folder**
 - **Step 4** :
     - Then need to create metadata_phone.csv & dict.txt in the `data/processed/ljspeech` folder
+        `metadata_phone.csv creation code:`
         ```sh
         ############################## metadata_phone.csv -> creation from metadata.csv #####################
         import pandas as pd
@@ -39,3 +40,25 @@
         df = df[['item_name', 'spk', 'txt', 'txt_raw', 'ph', 'wav_fn']]
         df.to_csv('metadata_phone.csv', index=False)
         ```
+        `dict.txt creation code:`
+        ```sh
+        import csv
+        def get_unique_chars(csv_file, output_file):
+            unique_chars = set()
+            with open(csv_file, 'r', encoding='utf-8') as f:
+                reader = csv.DictReader(f)
+                for row in reader:
+                    ph = row['ph'].split()
+                    unique_chars.update(set(ph))
+            
+            with open(output_file, 'w', encoding='utf-8') as f:
+                for char in sorted(unique_chars):
+                    f.write(f'{char} {char}\n')
+
+        csv_file = '/home/asif/tts_all/prodiff_traning_PoCs/DiffSinger/DiffSinger_PoCs_1/data/processed/ljspeech/metadata_phone.csv'
+        output_file = 'dict.txt'
+        get_unique_chars(csv_file, output_file)
+        ```
+## Training Stages:
+- **Step 1** : 
+    - Move fastdiff vocoder weight[Can be find the prodiff weight and config from: https://huggingface.co/spaces/Rongjiehuang/ProDiff/tree/main/checkpoints](https://huggingface.co/spaces/Rongjiehuang/ProDiff/tree/main/checkpoints) to the folder `checkpoints`
